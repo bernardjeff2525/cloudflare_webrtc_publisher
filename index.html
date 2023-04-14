@@ -1,0 +1,56 @@
+<html>
+<head>
+    <!-- This adapter normalizes cross-browser differences in WebRTC APIs. Currently necessary in order to support Firefox. -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/webrtc-adapter/8.1.2/adapter.min.js"
+            integrity="sha512-l40eBFtXx+ve5RryIELC3y6/OM6Nu89mLGQd7fg1C93tN6XrkC3supb+/YiD/Y+B8P37kdJjtG1MT1kOO2VzxA=="
+            crossorigin="anonymous"
+            referrerpolicy="no-referrer">
+    </script>
+    <link rel="stylesheet" href="css/style.css"/>
+</head>
+<body>
+<h4>WHIP Publisher</h4>
+
+<div>
+    <label for="publish-url" class="input-label">Publish URL:</label>
+    <div class="input-with-copy">
+        <input type="text" id="publish-url" value="">
+        <button class="copy-btn" data-input-id="publish-url">Copy</button>
+    </div>
+
+    <label for="player-url" class="input-label">Player URL:</label>
+    <div class="input-with-copy">
+        <input type="text" id="player-url" value="">
+        <button class="copy-btn" data-input-id="player-url">Copy</button>
+    </div>
+</div>
+
+<div>
+    <div class="stream-controls">
+        <div class="open-camera-tool tool">
+            <button class="start-camera-btn">Capture Camera</button>
+        </div>
+        <div class="start-stream-tool tool"></div>
+        <div class="play-stream-tool tool"></div>
+        <div class="end-stream-tool tool"></div>
+        <div class="video-tool tool"></div>
+        <div class="audio-tool tool"></div>
+    </div>
+
+
+    <div class="video-row">
+        <div class="video-container">
+            <h3 class="video-title">Actual Video :</h3>
+            <video class="video" id="input-video" controls playsinline autoplay muted></video>
+        </div>
+        <div class="video-container">
+            <h3 class="video-title">Broadcast Video :</h3>
+            <video class="video" id="remote-video" controls playsinline autoplay muted></video>
+        </div>
+    </div>
+</div>
+</body>
+</html>
+
+<script type="module" src="js/main.js"></script>
+<script type="module" src="js/copyButton.js"></script>
